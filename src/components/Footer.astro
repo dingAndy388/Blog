@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import { Mail, Github } from "@lucide/astro";
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/about" },
+];
+---
+
+<footer>
+      <div class="footer-content">
+
+  <div class="footer-left">
+      <div class="footer-desc">
+        <div class="logo">iterLand</div>
+        <p>A space for sharing experience, thoughts, ideas</p>
+      </div>
+      <div class="footer-contact">
+        <Mail/>
+        <p>dingandy388@gmail.com</p>
+      </div>
+    </div>
+
+  <div class="footer-right">
+    <div class="footer-nav">
+      <h4>Navigation</h4>
+      <nav>
+        <ul>
+          {
+            navLinks.map((link) => (
+              <li>
+                <a class="footer-nav-link" href={link.href}>{link.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 iterLand. All rights reserved.</p>
+  </div>
+</footer>

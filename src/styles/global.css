@@ -1,0 +1,132 @@
+/* Global Styles */
+:root {
+    /* color var */
+    --color-primary: #F97316;
+    --color-primary-light: #FFEDD5;
+    --color-text: #1F2937;
+    --color-bg: #FFFFFF;
+    --color-border: #E5E7EB;
+
+    /* spacing var */
+    --space-2xs: 4px;
+    --space-xm: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    /* font size var*/
+    --font-sm: 12px;
+    --font-md: 16px;
+    --font-lg: 24px;
+    --font-xl: 32px;
+    --font-2xl:48px;
+
+    /* radius */
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+
+}
+html {
+    font-size: var(--font-md);
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+body {
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    margin: 0;
+}
+main{
+    padding: var(--space-md);
+}
+header{
+    background-color: var(--color-bg);
+    font-size: var(--font-md);
+    padding: var(--space-sm) var(--space-lg);
+    border-bottom: 1px solid;
+    border-color: var(--color-border);
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    color: var(--color-primary);
+    font-size: var(--font-lg);
+    font-weight: bold;
+    float: left;
+    overflow: hidden;
+}
+.nav-links{
+    overflow: hidden;
+    float: right;
+    margin: 0;
+}
+.nav-link{
+    color: var(--color-text);
+    margin: var(--space-md);
+    font-size: var(--font-md);
+    float: left;
+    text-decoration: none;
+}
+footer{
+    padding: var(--space-2xl) var(--space-lg);
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid;
+    border-color: var(--color-border);
+    margin: 0;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+.footer-left {
+    flex: auto;
+}
+.footer-right {
+    flex: auto;
+}
+.footer-desc{
+    display: flex;
+    flex-direction: column;
+}
+.footer-desc p{
+    margin: 0;
+}
+.footer-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:var(--space-sm)
+}
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-nav-link{
+    text-decoration: none;
+    color: var(--color-text);
+}
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-bottom{
+    border-top: 1px solid;
+    border-color: var(--color-border);
+    margin-top: var(--space-md);
+}
+footer h4{
+    margin: 0;
+}

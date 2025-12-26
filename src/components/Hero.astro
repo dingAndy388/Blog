@@ -1,0 +1,107 @@
+---
+import "../styles/global.css";
+---
+
+<div class="hero">
+  <div class="hero-text">
+    <h1>Welcome to iterLand</h1>
+    <p>It's my personal website for ideas, articles, projects</p>
+  </div>
+  <div class="quick-nav-links">
+    <a class="quick-nav-link1" href="/blog">Read the Blog →</a>
+    <a class="quick-nav-link2" href="/projects">View Projects</a>
+  </div>
+  <div class="nav-cards">
+    <a class="nav-card" href="/blog">
+      <h3>Blog</h3>
+      <p>Check out my blogs that includes my thoughts, ideas and experience</p>
+    </a>
+    <a class="nav-card" href="/projects">
+      <h3>Projects</h3>
+      <p>Track my ongoing projects, and check out what I have done before</p>
+    </a>
+    <a class="nav-card" href="/about">
+      <h3>About</h3>
+      <p>Learn more about this website and who am I</p>
+    </a>
+  </div>
+</div>
+
+<style>
+  h1 {
+    color: var(--color-text);
+    font-size: var(--font-xl);
+    margin-bottom: var(--space-2xs);
+  }
+  p {
+    margin: var(--space-2xs);
+  }
+  .hero-text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: var(--space-2xl);
+  }
+  .quick-nav-links {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: var(--space-md);
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--space-md);
+  }
+  .quick-nav-link1 {
+    background-color: var(--color-primary);
+    border: 2px var(--color-primary-light);
+    text-decoration: none;
+    color: #ffffff;
+    padding: var(--space-lg);
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-radius: var(--radius-md);
+  }
+  .quick-nav-link2 {
+    background-color: var(--color-primary-light);
+    border: 1px var(--color-primary) solid;
+
+    text-decoration: none;
+    color: var(--color-primary);
+    padding: var(--space-lg);
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-radius: var(--radius-md);
+  }
+  .nav-cards {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: var(--space-2xl) var(--space-md);
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .nav-card {
+    text-decoration: none;
+    color: var(--color-text);
+    border: var(--color-border) solid 2px;
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    flex: 1;
+  }
+  .nav-card h3 {
+    margin: 0;
+    margin-bottom: var(--space-xs);
+    text-align: center;
+  }
+  .nav-card p {
+    text-align: center;
+  }
+</style>

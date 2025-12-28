@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-const { pageTitle } = Astro.props;
+const { pageTitle, subHeading } = Astro.props;
 import Footer from '../components/footer.astro';
 import Navigation from '../components/navigation.astro';
 ---
@@ -14,6 +14,10 @@ import Navigation from '../components/navigation.astro';
 	</head>
 	<body>
 		<Navigation/>
+		<div class="banner">
+			<h2>{pageTitle}</h2>
+			<p>{subHeading}</p>
+		</div>
 		<main>
 			<slot/>
 		</main>

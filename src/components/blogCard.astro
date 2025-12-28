@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+const { title, url, desc, tags, date } = Astro.props;
+import { Calendar } from "@lucide/astro";
+---
+
+<div class="blog-card">
+    <div class="head">
+        <div class="date">
+            📅{date}
+        </div>
+        <div class="tags">
+            {
+                tags.map((tag:any)=><a class="tag">#{tag}</a>)
+            }
+        </div>
+    </div>
+    <h4>{title}</h4>
+
+    <p>{desc}</p>
+
+    <a href={url} style="color: var(--color-primary);">Read More →</a>
+</div>

@@ -1,0 +1,28 @@
+---
+import PageLayout from "../layouts/pageLayout.astro";
+import "../styles/global.css";
+import Card from "../components/blogCard.astro";
+
+const allPosts = Object.values(
+    import.meta.glob("./posts/*.md", { eager: true }),
+);
+---
+
+<PageLayout
+    pageTitle="Blog"
+    subHeading="A place sharing ideas, insights and experience."
+>
+    <div class="blog-cards">
+        {
+            allPosts.map((post: any) => (
+                <Card
+                    url={post.url}
+                    title={post.frontmatter.title}
+                    desc={post.frontmatter.description}
+                    tags={post.frontmatter.tags}
+                    date={post.frontmatter.date}
+                />
+            ))
+        }
+    </div>
+</PageLayout>

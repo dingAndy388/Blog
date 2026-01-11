@@ -12,17 +12,19 @@ const allPosts = Object.values(
     pageTitle="Blog"
     subHeading="A place sharing ideas, insights and experience."
 >
-    <div class="blog-cards">
-        {
-            allPosts.map((post: any) => (
-                <Card
-                    url={post.url}
-                    title={post.frontmatter.title}
-                    desc={post.frontmatter.description}
-                    tags={post.frontmatter.tags}
-                    date={post.frontmatter.date}
-                />
-            ))
-        }
-    </div>
+    <main>
+        <div class="blog-cards">
+            {
+                allPosts.map((post: any) => (
+                    <Card
+                        url={post.url}
+                        title={post.frontmatter.title}
+                        desc={post.frontmatter.description}
+                        tags={post.frontmatter.tags}
+                        date={post.frontmatter.date}
+                    />
+                ))
+            }
+        </div>
+    </main>
 </PageLayout>

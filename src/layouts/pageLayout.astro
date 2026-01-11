@@ -15,12 +15,10 @@ import Navigation from '../components/navigation.astro';
 	<body>
 		<Navigation/>
 		<div class="banner">
-			<h2>{pageTitle}</h2>
+			<h2 style="font-size: var(--font-xl);">{pageTitle}</h2>
 			<p>{subHeading}</p>
 		</div>
-		<main>
-			<slot/>
-		</main>
+		<slot/>
 		<Footer/>
 	</body>
 </html>

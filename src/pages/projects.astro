@@ -1,0 +1,54 @@
+---
+import PageLayout from "../layouts/pageLayout.astro";
+import ExpCard from "../components/expCard.astro";
+import "../styles/global.css"
+---
+
+<PageLayout pageTitle="Projects" subHeading="Check out my current and past projects">
+    <div class="section">
+        <h4>Ongoing</h4>
+        <div class="exps"> 
+                <ExpCard
+                    url="/blog"
+                        title="Blog"
+                        desc="This is exactly what this website is doing. I will post articles related multiple topics on this website to share my ideas and potentially help beginners like my past self. There will be multiple series, some would be educational and some would be more focusing on sharing and discussing ideas. I plan to upload articles weekly, you can check out the blog page to see more."
+                        date="Nov 2025- "/>
+        </div>
+    </div>
+    <div class="gray section">
+        <h4>Past</h4>
+        <div class="exps"> 
+            <div class="exp">
+                <ExpCard
+                    url="https://gitlab.igem.org/2025/software-tools/hkssc"
+                        title="Eczema Classification App"
+                        desc="I was invited to join our school's iGEM team's software's subgroup as a developer. For the project, we design and develop a mobile app to classify eczema subtypes with deep learning backbone. As the leading developer of the project, I design and build deep learning models to classify clinical images of eczema through many different apporaches. At the same time, my classmate worked as front-end developer to deploy my model into Andriod APP. You can learn more about the project from the GitLab repo and included link to our wiki page."
+                        date="Nov 2024 - Oct 2025"/>
+            </div>
+        </div>
+    </div>
+</PageLayout>
+<style>
+    h4{
+        margin: var(--space-md);
+        font-size: var(--font-lg);
+        text-align: center;
+    }
+    p{
+        margin: 0;
+    }
+    .section {
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--space-xl) var(--space-lg);
+        margin: 0;
+
+    }
+    .gray{
+        background-color: var(--color-bg-light);
+    }
+    .exps{
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+</style>

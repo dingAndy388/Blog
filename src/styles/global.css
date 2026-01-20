@@ -44,7 +44,7 @@ body {
 }
 
 main {
-    padding: var(--space-md);
+    padding: 5%;
 }
 
 header {
@@ -86,7 +86,7 @@ a {
 }
 
 footer {
-    padding: var(--space-2xl) var(--space-lg);
+    padding: var(--space-2xl) 10vw;
     background-color: var(--color-bg);
     display: flex;
     flex-direction: column;
@@ -236,6 +236,7 @@ footer h4 {
     border: 1px, solid, var(--color-border);
 }
 .blog-cards{
+    padding: 0 5vw;
     display: grid;
     grid-template-columns: auto auto;
     gap: var(--space-md);

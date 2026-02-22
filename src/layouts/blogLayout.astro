@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+const { frontmatter } = Astro.props;
+import Footer from "../components/footer.astro";
+import Navigation from "../components/navigation.astro";
+import "../../node_modules/katex/dist/katex.min.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+		<Navigation />
+		<div class="banner">
+			<h2 style="font-size: var(--font-xl);">{frontmatter.title}</h2>
+			<p>{frontmatter.description}</p>
+			<p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
+		</div>
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

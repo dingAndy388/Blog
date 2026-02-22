@@ -44,7 +44,8 @@ body {
 }
 
 main {
-    padding: 5%;
+    max-width: 800px;
+    margin: auto;
 }
 
 header {
@@ -235,7 +236,8 @@ footer h4 {
     padding: 0 var(--space-2xs);
     border: 1px, solid, var(--color-border);
 }
-.blog-cards{
+
+.blog-cards {
     padding: 0 5vw;
     display: grid;
     grid-template-columns: auto auto;

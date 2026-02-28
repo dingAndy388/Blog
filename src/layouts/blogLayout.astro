@@ -4,6 +4,7 @@ const { frontmatter } = Astro.props;
 import Footer from "../components/footer.astro";
 import Navigation from "../components/navigation.astro";
 import "../../node_modules/katex/dist/katex.min.css";
+import Comments from "../components/comments.astro";
 ---
 
 <html lang="en">
@@ -21,9 +22,10 @@ import "../../node_modules/katex/dist/katex.min.css";
 			<p>{frontmatter.description}</p>
 			<p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
 		</div>
-		<main>
+		<div class="prose">
 			<slot />
-		</main>
+		</div>
+		<Comments />
 		<Footer />
 	</body>
 </html>

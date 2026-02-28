@@ -1,0 +1,32 @@
+---
+import { slugify } from "../scripts/slugify";
+
+const allPosts = Object.values(
+  import.meta.glob("../pages/posts/*.md", { eager: true })
+) as any[];
+
+const tagCounts = new Map<string, number>();
+allPosts.forEach((post) => {
+  const tags = post.frontmatter.tags || [];
+  tags.forEach((tag: string) => {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  });
+});
+
+const sortedTags = Array.from(tagCounts.entries()).sort((a, b) =>
+  a[0].localeCompare(b[0])
+);
+---
+
+<div class="tag-list">
+  <h3>Tags</h3>
+  <ul>
+    {sortedTags.map(([tag, count]) => (
+      <li>
+        <a href={`/tags/${slugify(tag)}`}>
+          #{tag} <span class="count">({count})</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

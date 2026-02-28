@@ -2,6 +2,7 @@
 import PageLayout from "../layouts/pageLayout.astro";
 import "../styles/global.css";
 import Card from "../components/blogCard.astro";
+import TagList from "../components/tagList.astro";
 
 const allPosts = Object.values(
     import.meta.glob("./posts/*.md", { eager: true }),
@@ -12,6 +13,10 @@ const allPosts = Object.values(
     pageTitle="Blog"
     subHeading="A place sharing ideas, insights and experience."
 >
+    <div class="blog-sidebar">
+        <TagList />
+    </div>
+
     <main>
         <div class="blog-cards">
             {
@@ -28,3 +33,16 @@ const allPosts = Object.values(
         </div>
     </main>
 </PageLayout>
+
+<style>
+.blog-sidebar {
+    max-width: 300px;
+    margin: 0 auto var(--space-6);
+}
+@media (min-width: 768px) {
+    .blog-sidebar {
+        float: right;
+        margin-left: var(--space-6);
+    }
+}
+</style>

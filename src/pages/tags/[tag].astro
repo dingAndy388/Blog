@@ -1,0 +1,47 @@
+---
+import PageLayout from "../../layouts/pageLayout.astro";
+import Card from "../../components/blogCard.astro";
+import { slugify } from "../../scripts/slugify";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob("../posts/*.md", { eager: true })
+  ) as any[];
+
+  const tagMap = new Map<string, any[]>();
+  allPosts.forEach((post) => {
+    const tags = post.frontmatter.tags || [];
+    tags.forEach((tag: string) => {
+      if (!tagMap.has(tag)) {
+        tagMap.set(tag, []);
+      }
+      tagMap.get(tag)!.push(post);
+    });
+  });
+
+  return Array.from(tagMap.entries()).map(([tag, posts]) => ({
+    params: { tag: slugify(tag) },
+    props: { tagName: tag, posts },
+  }));
+}
+
+const { tagName, posts } = Astro.props;
+const pageTitle = `Tag: ${tagName}`;
+const subHeading = `${posts.length} posts in total`;
+---
+
+<PageLayout pageTitle={pageTitle} subHeading={subHeading}>
+  <main>
+    <div class="blog-cards">
+      {posts.map((post) => (
+        <Card
+          url={post.url}
+          title={post.frontmatter.title}
+          desc={post.frontmatter.description}
+          tags={post.frontmatter.tags}
+          date={post.frontmatter.date}
+        />
+      ))}
+    </div>
+  </main>
+</PageLayout>

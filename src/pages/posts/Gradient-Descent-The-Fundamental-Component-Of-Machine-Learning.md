@@ -4,7 +4,6 @@ title: "Gradient Descent: The Fundamental Component Of Machine Learning"
 description: "In this article, I will introduce one of the most important algorithms in machine learning that make everything possible"
 tags: ["gradient descent", "machine learning", "beginner"]
 date: "30 Jan, 2026"
-
 ---
 
 
@@ -37,15 +36,15 @@ After digitalizing everything, we find that things become easier. Our task shift
 
 The task might sound familiar to you. Finding relationship between numbers. Let's look at an easier example first, when we finished an experiment in science, we usually plot a graph:
 
-<img src="\src\static\images\PixPin_2026-02-01_11-53-43.png" style="zoom: 50%; display: block; margin-left: auto; margin-right: auto;" />
+<img src="\images\PixPin_2026-02-01_11-53-43.png" style="zoom: 50%; display: block; margin-left: auto; margin-right: auto;" />
 
 draw a best-fit line:
 
-<img src="\src\static\images\PixPin_2026-02-01_11-55-20.png" style="zoom: 50%; display: block; margin-left: auto; margin-right: auto;" />
+<img src="\images\PixPin_2026-02-01_11-55-20.png" style="zoom: 50%; display: block; margin-left: auto; margin-right: auto;" />
 
 and state the **relationship** between variables:
 
-<img src="\src\static\images\PixPin_2026-02-01_11-55-39.png" style="zoom: 60%; display: block; margin-left: auto; margin-right: auto;" />
+<img src="\images\PixPin_2026-02-01_11-55-39.png" style="zoom: 60%; display: block; margin-left: auto; margin-right: auto;" />
 
 Yes, **relationship**, exactly the same thing we are trying to do now. In mathematics, the above process is called **regression**, which is the method to find relationship between independent variable and dependent variables. In fact, a simple regression like that can already be considered as machine learning, it's the fundamental form of **supervised machine learning**.
 
@@ -90,7 +89,7 @@ But plot is for two variables only, in our case, we have thousands of variables 
 
 Recall how we work on regression task, we find a loss function, put our line equation into it and use multivariable calculus to find the optimum parameters. It's actually exactly how we cope with more complicated scenarios. 
 
-I want to define the term "model" first. In linear regression, the model is a simple line equation $y= ax+b$, which gives us a line. Model refer to the mathematical framework we gave computer to train for, and it accounts for a large portion of the final performance. Imagine that we keep using line regression to make our classifier, asking computer to compute the best-fit line that map pixels to class label, ludicrous right? The choice of appropriate model is the foundation of all machine learning tasks, bad model choices would limit the final performance or even lead to failure. But again, one of the main aim of machine learning is reduce specific manual rule setting, so we want the machine to learn the pattern itself instead of giving them the answer. If we need to define a specific model to every task, like linear $y=ax+b$, quadratic $ax^2+bx+c$ or exponential $ae^{bx}+c$ , we are contradicting with the aim of machine learning. That's why we need some more universal model choice that fit for at least most situations, in deep learning, which is a subfield of machine learning, we use neural networks. 
+I want to define the term "model" first. In linear regression, the model is a simple line equation $y= ax+b$, which gives us a line. Models refer to the mathematical framework we ask computers to train for, and it accounts for a large portion of the final performance. Imagine that we keep using line regression to make our classifier, asking computer to compute the best-fit line that map pixels to class label, ludicrous right? The choice of appropriate model is the foundation of all machine learning tasks, bad model choices would limit the final performance or even lead to failure. But again, one of the main aim of machine learning is reduce specific manual rule setting, so we want the machine to learn the pattern itself instead of giving them the answer. If we need to define a specific model to every task, like linear $y=ax+b$, quadratic $ax^2+bx+c$ or exponential $ae^{bx}+c$ , we are contradicting with the aim of machine learning. That's why we need some more universal model choice that fit for at least most situations, in deep learning, which is a subfield of machine learning, we use neural networks. 
 
 We will not talk too much about neural networks here as the topic of this article is gradient descent, and I will post another article later to introduce and investigate more on neural networks. Here, just remember that we will need a more general way to express our models rather than a specific equation like $y=ax+b$. You might already notice that the key part of models in machine learning is the constants, which is called learnable parameters of a model. These parameters are fundamental components that makes a equation into a model. Therefore, we can express our model as a function with two variables, parameters and input, denoted as $M(x,w)$. Now we can use this generalized expression to investigate the essence of machine learning.
 

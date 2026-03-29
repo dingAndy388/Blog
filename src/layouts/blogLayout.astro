@@ -20,7 +20,7 @@ import Comments from "../components/comments.astro";
 		<div class="banner">
 			<h2 style="font-size: var(--font-xl);">{frontmatter.title}</h2>
 			<p>{frontmatter.description}</p>
-			<p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
+			<p>Published on: {frontmatter.date.toString().slice(0, 12)}</p>
 		</div>
 		<div class="prose">
 			<slot />
